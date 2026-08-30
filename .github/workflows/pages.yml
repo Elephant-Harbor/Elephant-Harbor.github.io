@@ -1,0 +1,38 @@
+name: pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No third-party fonts, analytics, or trackers
+        run: |
+          set -euo pipefail
+          if grep -R -n -E 'fonts\.googleapis|googletagmanager|google-analytics|gtag\(|analytics\.js' --include='*.html' --include='*.css' . ; then
+            echo 'Third-party collect/font URL found' >&2
+            exit 1
+          fi
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

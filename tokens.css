@@ -1,0 +1,42 @@
+/* Elephant Harbor tokens. Self-hosted type. Do not add Setaside forest/gold. Afterfee stays off. */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("assets/fonts/fraunces.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+  font-optical-sizing: auto;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("assets/fonts/source-sans-3.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --paper: #FFF6E8;
+  --ink: #10233F;
+  --sea: #0077C8;
+  --tide: var(--sea);
+  --buoy: #F04E3A;
+  --foam: #B8F0E4;
+  --fog: #4A6A80;
+
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-sans: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --measure: 38rem;
+  --page-max: 1120px;
+  --gutter: clamp(24px, 5vw, 48px);
+  --header-h: 72px;
+  --header-h-sm: 56px;
+  --lockup-h: 32px;
+  --lockup-h-sm: 24px;
+
+  --focus-ring: 2px solid var(--buoy);
+  --focus-offset: 2px;
+}
