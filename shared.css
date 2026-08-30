@@ -277,7 +277,8 @@ main {
   border-left: 5px solid var(--buoy);
 }
 
-.venture .sub {
+.venture .sub,
+.teaser .sub {
   margin: 0 0 0.75rem;
   color: var(--fog);
   font-size: 1rem;
