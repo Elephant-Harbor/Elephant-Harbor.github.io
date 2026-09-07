@@ -21,7 +21,7 @@ Worthwhile companies start with a real problem.
 ## Companies
 Independent companies. Each keeps its own name.
 
-*(Card: Setaside Designs — 2026 bookkeeping tools for the self-employed. Live.)*
+*(Card: Setaside Designs — 2026 self-employed bookkeeping spreadsheet (Excel + Google Sheets). Live.)*
 
 ## How we work
 We start with a problem, not a predetermined product. We test assumptions quickly, invest when evidence supports it, and change direction when it doesn’t.
@@ -35,3 +35,4 @@ Our teams use software and autonomous AI extensively to research, build, analyze
 
 ## Close
 Companies built and operated by Elephant Harbor.
+
