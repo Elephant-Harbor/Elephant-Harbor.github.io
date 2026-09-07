@@ -1,7 +1,11 @@
-# Header lockup fidelity
+# Header lockup
 
-`assets/lockup.svg` matches `/brand/assets/lockup.svg` (Manrope in `font-family`).
+## Issue
+SVG lockup matched `/brand/` markup but `<text font-family="Manrope">` fell back to a serif system face when the file was loaded as `<img>` (browsers do not apply page `@font-face` inside SVG-as-image).
 
-When that SVG is used as `<img>`, browsers do **not** apply page `@font-face`, so the wordmark can fall back to a system serif and fail Modern Operator fidelity.
+## Current fix (site-rebrand)
+- **Header:** HTML lockup — Harbor Gate `mark.svg` + CSS Manrope title-case **Elephant Harbor** (Modern Operator). Guarantees sans wordmark via `tokens.css`.
+- **SVG assets:** `lockup.svg` / `lockup-on-ink.svg` outlined from Manrope 700 (no `<text>`), safe for `<img>` / OG reuse.
+- **PNG exports:** `lockup-512.png` / `lockup-1024.png` retained (Maren brand export) as optional raster fallback; not used in header.
 
-**Fix (pre-cutover):** header uses `assets/lockup-512.png` from `/brand/exports/` (Manrope outlined/baked). Keep SVG for editable source sync with brand; prefer PNG (or outlined SVG) for production `<img>` lockups.
+Hold production cutover until domain email + Thomas greenlight.

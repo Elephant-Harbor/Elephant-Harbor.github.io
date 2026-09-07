@@ -106,16 +106,48 @@ textarea:focus-visible {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  line-height: 0;
+  gap: 0.7rem;
+  line-height: 1;
+  color: var(--eh-ink);
+  text-decoration: none;
 }
 
 .logo:hover {
   text-decoration: none;
+  color: var(--eh-ink);
 }
 
-.logo img {
-  height: var(--lockup-h);
+.logo img,
+.logo-mark {
+  height: 2.5rem;
   width: auto;
+  flex: 0 0 auto;
+}
+
+.logo-word {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.logo-name {
+  font-family: var(--eh-font-sans);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  color: var(--eh-ink);
+  line-height: 1.1;
+}
+
+.logo-tag {
+  font-family: var(--eh-font-sans);
+  font-weight: 600;
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--eh-tide);
+  line-height: 1.2;
 }
 
 .nav {
@@ -646,9 +678,8 @@ main {
     gap: 0.5rem 1rem;
   }
 
-  .logo img {
-    height: var(--lockup-h-sm);
-  }
+  .logo-mark { height: 2.15rem; }
+  .logo-name { font-size: 1.05rem; }
 
   .nav {
     width: 100%;
