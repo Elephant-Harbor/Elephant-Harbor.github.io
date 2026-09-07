@@ -1,42 +1,121 @@
-/* Elephant Harbor tokens. Self-hosted type. Do not add Setaside forest/gold. Afterfee stays off. */
+/* Elephant Harbor — site tokens (aligned with /brand/tokens.css)
+   Self-hosted Manrope + Source Serif 4. No third-party font URLs.
+   Steward: Maren · Technical: Wells
+*/
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("assets/fonts/fraunces.woff2") format("woff2");
-  font-weight: 500 600;
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope-400.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
-  font-optical-sizing: auto;
 }
-
 @font-face {
-  font-family: "Source Sans 3";
-  src: url("assets/fonts/source-sans-3.woff2") format("woff2");
-  font-weight: 400 600;
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/assets/fonts/source-serif-4-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/assets/fonts/source-serif-4-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/assets/fonts/source-serif-4-700.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --paper: #FFF6E8;
-  --ink: #10233F;
-  --sea: #0077C8;
-  --tide: var(--sea);
-  --buoy: #F04E3A;
-  --foam: #B8F0E4;
-  --fog: #4A6A80;
+  /* Color — brand palette */
+  --eh-harbor-ink: #10262C;
+  --eh-deep-tide: #236B6A;
+  --eh-signal-brass: #D49A45;
+  --eh-canvas: #F5F2EA;
+  --eh-fog: #E8EFED;
 
-  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
-  --font-sans: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --eh-text: var(--eh-harbor-ink);
+  --eh-text-muted: color-mix(in srgb, var(--eh-harbor-ink) 72%, white);
+  --eh-bg: var(--eh-canvas);
+  --eh-bg-subtle: var(--eh-fog);
+  --eh-border: color-mix(in srgb, var(--eh-harbor-ink) 14%, transparent);
+  --eh-accent: var(--eh-deep-tide);
+  --eh-accent-warm: var(--eh-signal-brass);
 
-  --measure: 38rem;
-  --page-max: 1120px;
-  --gutter: clamp(24px, 5vw, 48px);
-  --header-h: 72px;
+  /* Type */
+  --eh-font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --eh-font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --eh-fs-xs: 0.75rem;
+  --eh-fs-sm: 0.875rem;
+  --eh-fs-md: 1rem;
+  --eh-fs-lg: 1.25rem;
+  --eh-fs-xl: 1.75rem;
+  --eh-fs-2xl: 2.5rem;
+  --eh-lh: 1.55;
+  --eh-lh-tight: 1.25;
+
+  /* Space */
+  --eh-space-1: 0.25rem;
+  --eh-space-2: 0.5rem;
+  --eh-space-3: 0.75rem;
+  --eh-space-4: 1rem;
+  --eh-space-5: 1.5rem;
+  --eh-space-6: 2rem;
+  --eh-space-8: 3rem;
+  --eh-radius: 6px;
+  --eh-radius-lg: 12px;
+  --eh-max: 1100px;
+  --eh-nav-h: 64px;
+  --eh-gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --eh-measure: 38rem;
+
+  --eh-focus-ring: 2px solid var(--eh-signal-brass);
+  --eh-focus-offset: 3px;
+
+  /* Legacy aliases (retired palette names → new) */
+  --paper: var(--eh-canvas);
+  --ink: var(--eh-harbor-ink);
+  --sea: var(--eh-deep-tide);
+  --tide: var(--eh-deep-tide);
+  --buoy: var(--eh-signal-brass);
+  --foam: var(--eh-fog);
+  --fog: var(--eh-text-muted);
+  --font-display: var(--eh-font-serif);
+  --font-sans: var(--eh-font-sans);
+  --measure: var(--eh-measure);
+  --page-max: var(--eh-max);
+  --gutter: var(--eh-gutter);
+  --header-h: var(--eh-nav-h);
   --header-h-sm: 56px;
-  --lockup-h: 32px;
-  --lockup-h-sm: 24px;
-
-  --focus-ring: 2px solid var(--buoy);
-  --focus-offset: 2px;
+  --lockup-h: 36px;
+  --lockup-h-sm: 28px;
+  --focus-ring: var(--eh-focus-ring);
+  --focus-offset: var(--eh-focus-offset);
 }

@@ -1,15 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Elephant Harbor mark. Blue ear (cove) + navy head + buoy eye. Paper hole punched through the ear. -->
-  <defs>
-    <clipPath id="markClip">
-      <rect width="64" height="64" rx="14"/>
-    </clipPath>
-  </defs>
-  <g clip-path="url(#markClip)">
-    <rect x="4" y="8" width="38" height="48" rx="14" fill="#0077C8"/>
-    <circle cx="18" cy="32" r="9" fill="#FFF6E8"/>
-    <rect x="28" y="16" width="32" height="32" rx="11" fill="#10233F"/>
-    <circle cx="48" cy="30" r="4.5" fill="#F04E3A"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Elephant Harbor mark">
+  <!-- Left pillar -->
+  <rect x="28" y="18" width="22" height="48" fill="#10262C"/>
+  <path d="M28 66 C28 66 22 88 18 102 C28 98 42 92 50 66 Z" fill="#236B6A"/>
+  <!-- Right pillar (mirror) -->
+  <rect x="70" y="18" width="22" height="48" fill="#10262C"/>
+  <path d="M92 66 C92 66 98 88 102 102 C92 98 78 92 70 66 Z" fill="#236B6A"/>
 </svg>

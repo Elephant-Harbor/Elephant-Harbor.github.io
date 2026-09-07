@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Elephant Harbor</title>
+  <meta name="description" content="Contact Elephant Harbor.">
+  <meta name="theme-color" content="#10262C">
+  <meta property="og:title" content="Contact — Elephant Harbor">
+  <meta property="og:description" content="Contact Elephant Harbor.">
+  <meta property="og:image" content="https://elephantharbor.com/assets/og.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elephantharbor.com/contact/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://elephantharbor.com/contact/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-180.png">
+  <link rel="stylesheet" href="/shared.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="logo" href="/">
+        <img src="/assets/lockup.svg" alt="Elephant Harbor" width="208" height="56">
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/companies/">Companies</a>
+        <a href="/about/">About</a>
+        <a href="/contact/" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <p class="kicker">Contact</p>
+    <h1 class="page-title">Get in touch</h1>
+    <div class="contact-block">
+      <p>Email is the best way to reach us.</p>
+      <p><a class="email" href="mailto:elephantharborhq@gmail.com">elephantharborhq@gmail.com</a></p>
+      <p class="contact-note">A domain address will replace this Gmail once mail is verified (SPF/DKIM/DMARC). No street address or phone is published here.</p>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+      <p class="form-note">Optional draft helper — opens your mail client with a prefilled message. Nothing is stored on this site.</p>
+      <label for="contact-name">Your name</label>
+      <input id="contact-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="contact-email">Your email</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" name="message" required></textarea>
+
+      <button class="btn btn-ink" type="submit">Open email draft</button>
+    </form>
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = document.getElementById("contact-name").value.trim();
+        var email = document.getElementById("contact-email").value.trim();
+        var message = document.getElementById("contact-message").value.trim();
+        var body = "From: " + name + " <" + email + ">\n\n" + message;
+        var url = "mailto:elephantharborhq@gmail.com"
+          + "?subject=" + encodeURIComponent("Elephant Harbor inquiry")
+          + "&body=" + encodeURIComponent(body);
+        window.location.href = url;
+      });
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/companies/">Companies</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="mailto:elephantharborhq@gmail.com">elephantharborhq@gmail.com</a>
+      </nav>
+      <p class="footer-meta">Different companies. Further together.</p>
+    </div>
+  </footer>
+</body>
+</html>
