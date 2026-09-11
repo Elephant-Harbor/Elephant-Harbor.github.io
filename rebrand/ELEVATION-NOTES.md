@@ -54,3 +54,29 @@ python3 -m http.server 8080
 Hayes portfolio honesty **PASS**. Follow-ups shipped:
 - Added `robots.txt` + `sitemap.xml` (were 404) to help replace stale search snippets.
 - Tightened plural/present claims so operating-model language is distinct from current state (Setaside Designs).
+
+
+## Soft redirects vs HTTP 301 (GitHub Pages)
+
+Paths `/about/`, `/companies/`, and `/ventures/` use **soft redirects** (HTTP 200 + `meta refresh` + `location.replace` + `noindex` + canonical to the target). That is intentional on plain GitHub Pages (`server: GitHub.com`): true path-level **HTTP 301** responses are generally unavailable without a DNS/proxy layer in front of Pages (e.g. Cloudflare Page Rules / Redirect Rules, or similar).
+
+Until DNS/proxy 301s are configured:
+
+- Keep the soft-redirect HTML stubs.
+- Keep those paths **out of** `sitemap.xml` (already omitted).
+- Keep `noindex` on the stubs so crawlers prefer `/approach/` and `/portfolio/`.
+
+Do not invent a `_redirects` / `vercel.json` / Netlify-style file for this repo — Pages will not honor it.
+
+## Live `tokens.css` vs brand reference (`brand/tokens.css`)
+
+Brand reference lives outside this Pages repo at `elephantharbor.github.io/brand/tokens.css`. Live public tokens keep the elevation values below; colors and font families match brand. Deltas are intentional (Modern Operator depth / larger chrome), not drift.
+
+| Token | Brand reference | Live (`tokens.css`) | Notes |
+|-------|-----------------|---------------------|-------|
+| `--eh-text-muted` | ink **72%** + white | ink **68%** + white | Slightly stronger muted for elevated surfaces / fog sections |
+| `--eh-radius` | **6px** | **8px** | Softer cards / controls |
+| `--eh-max` | **1100px** | **1120px** | Slightly wider content measure |
+| `--eh-nav-h` | **56px** | **76px** | Taller sticky header for larger PNG lockup |
+
+Live also defines elevation-only extras (glass, glow, shadows, `--eh-radius-lg` / `--eh-radius-xl`, motion) that brand does not. **Keep live values**; do not force-sync to brand without an explicit design pass.
