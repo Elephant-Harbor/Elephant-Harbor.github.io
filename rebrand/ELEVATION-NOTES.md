@@ -47,3 +47,10 @@ python3 -m http.server 8080
 4. Consider a subtle reduced-data hero SVG asset vs inline if caching/CDN policies change.
 5. Lighthouse pass on contrast for muted text on fog sections; tweak `--eh-text-muted` if needed after real-device review.
 6. If branch previews become routine, add a workflow that publishes `site-*` to a `*.github.io` preview path (today: main-only by design).
+
+
+## Post-publish honesty pass (2026-09-11)
+
+Hayes portfolio honesty **PASS**. Follow-ups shipped:
+- Added `robots.txt` + `sitemap.xml` (were 404) to help replace stale search snippets.
+- Tightened plural/present claims so operating-model language is distinct from current state (Setaside Designs).
