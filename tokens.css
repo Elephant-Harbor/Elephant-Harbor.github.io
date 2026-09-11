@@ -1,6 +1,6 @@
 /* Elephant Harbor — site tokens (aligned with /brand/tokens.css)
    Self-hosted Manrope + Source Serif 4. No third-party font URLs.
-   Steward: Maren · Technical: Wells
+   Elevation pass: depth, motion, glass — Modern Operator.
 */
 
 @font-face {
@@ -62,12 +62,27 @@
   --eh-fog: #E8EFED;
 
   --eh-text: var(--eh-harbor-ink);
-  --eh-text-muted: color-mix(in srgb, var(--eh-harbor-ink) 72%, white);
+  --eh-text-muted: color-mix(in srgb, var(--eh-harbor-ink) 68%, white);
   --eh-bg: var(--eh-canvas);
   --eh-bg-subtle: var(--eh-fog);
-  --eh-border: color-mix(in srgb, var(--eh-harbor-ink) 14%, transparent);
+  --eh-border: color-mix(in srgb, var(--eh-harbor-ink) 12%, transparent);
+  --eh-border-strong: color-mix(in srgb, var(--eh-harbor-ink) 22%, transparent);
   --eh-accent: var(--eh-deep-tide);
   --eh-accent-warm: var(--eh-signal-brass);
+
+  /* Depth / surface */
+  --eh-glow-teal: color-mix(in srgb, var(--eh-deep-tide) 35%, transparent);
+  --eh-glow-brass: color-mix(in srgb, var(--eh-signal-brass) 28%, transparent);
+  --eh-glass: color-mix(in srgb, var(--eh-canvas) 72%, transparent);
+  --eh-glass-ink: color-mix(in srgb, var(--eh-harbor-ink) 78%, transparent);
+  --eh-surface: #ffffff;
+  --eh-shadow-sm: 0 1px 2px color-mix(in srgb, var(--eh-harbor-ink) 6%, transparent);
+  --eh-shadow-md:
+    0 4px 16px color-mix(in srgb, var(--eh-harbor-ink) 8%, transparent),
+    0 1px 3px color-mix(in srgb, var(--eh-harbor-ink) 4%, transparent);
+  --eh-shadow-lg:
+    0 12px 40px color-mix(in srgb, var(--eh-harbor-ink) 12%, transparent),
+    0 2px 8px color-mix(in srgb, var(--eh-harbor-ink) 6%, transparent);
 
   /* Type */
   --eh-font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -79,7 +94,7 @@
   --eh-fs-xl: 1.75rem;
   --eh-fs-2xl: 2.5rem;
   --eh-lh: 1.55;
-  --eh-lh-tight: 1.25;
+  --eh-lh-tight: 1.22;
 
   /* Space */
   --eh-space-1: 0.25rem;
@@ -89,17 +104,23 @@
   --eh-space-5: 1.5rem;
   --eh-space-6: 2rem;
   --eh-space-8: 3rem;
-  --eh-radius: 6px;
-  --eh-radius-lg: 12px;
-  --eh-max: 1100px;
-  --eh-nav-h: 64px;
+  --eh-radius: 8px;
+  --eh-radius-lg: 14px;
+  --eh-radius-xl: 20px;
+  --eh-max: 1120px;
+  --eh-nav-h: 76px;
   --eh-gutter: clamp(1.25rem, 4vw, 2.5rem);
   --eh-measure: 38rem;
 
   --eh-focus-ring: 2px solid var(--eh-signal-brass);
   --eh-focus-offset: 3px;
 
-  /* Legacy aliases (retired palette names → new) */
+  /* Motion */
+  --eh-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --eh-dur: 420ms;
+  --eh-dur-fast: 180ms;
+
+  /* Legacy aliases */
   --paper: var(--eh-canvas);
   --ink: var(--eh-harbor-ink);
   --sea: var(--eh-deep-tide);
@@ -113,9 +134,10 @@
   --page-max: var(--eh-max);
   --gutter: var(--eh-gutter);
   --header-h: var(--eh-nav-h);
-  --header-h-sm: 56px;
-  --lockup-h: 36px;
-  --lockup-h-sm: 28px;
+  --header-h-sm: 64px;
+  /* ~1.7× prior 36/28 — more prominent lockup, not a huge bar */
+  --lockup-h: 58px;
+  --lockup-h-sm: 44px;
   --focus-ring: var(--eh-focus-ring);
   --focus-offset: var(--eh-focus-offset);
 }
